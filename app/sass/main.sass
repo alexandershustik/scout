@@ -1,0 +1,109 @@
+$xsmall: 'only screen and (width: 320px)'
+$small: 'only screen and (min-width: 768px)'
+$medium: 'only screen and (min-width: 992px)'
+$large: 'only screen and (min-width: 1200px)'
+
+$base: #7d7e83
+body
+	min-width: 320px
+	@media #{$small}
+		background: blue
+	@media #{$medium}
+		background: yellow
+	@media #{$large}
+		background: green
+.nav-head
+	background: $base
+	position: relative
+	@media #{$medium}
+		width: 768px
+		margin: 0 auto
+	@media #{$large}
+		width: 992px
+		margin: 0 auto
+.logo-wrap
+	width: 320px
+	position: relative
+	a
+		display: block
+		font-size: 0
+	img
+		padding: 20px 60px 20px 20px
+		background: #231f20
+		width: 100%
+		box-sizing: border-box
+		@media #{$small}
+			width: inherit
+			padding: 20px 40px
+.toggle-btn
+	width: 40px
+	height: 30px
+	position: absolute
+	right: 10px
+	top: 0
+	bottom: 0
+	margin: auto
+	padding: 0
+	display: block
+	display: flex
+	justify-content: center
+	align-content: space-around
+	flex-wrap: wrap
+	align-items: center
+	span
+		width: 30px
+		height: 3px
+		background: #fff
+		display: block
+		transition: .2s
+	span:nth-child(2)
+		left: 0
+		opacity: 1
+	&.open
+		span:nth-child(1)
+			transform: rotate(45deg)
+			position: absolute
+			top: 0
+			bottom: 0
+			margin: auto
+			left: 0
+			right: 0
+		span:nth-child(2)
+			left: 50px
+			opacity: 0
+		span:nth-child(3)
+			transform: rotate(-45deg)
+			position: absolute
+			top: 0
+			bottom: 0
+			margin: auto
+			left: 0
+			right: 0
+.nav-section
+	position: relative
+.nav-list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	width: 320px
+	height: 0
+	overflow: hidden
+	transition: .2s
+	position: absolute
+	right: 0
+	text-align: right
+	&.open
+		height: 258px
+	a
+		background: #009bc5
+		padding: 10px 15px
+		width: 100%
+		display: block
+		font-family: Helvetica
+		font-size: 20px
+		text-decoration: none
+		text-transform: capitalize
+		color: #fff
+		box-sizing: border-box
+		&.active
+			background: darken(#009bc5, 20%)
