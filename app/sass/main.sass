@@ -1,55 +1,65 @@
-$xsmall: 'only screen and (width: 320px)'
-$small: 'only screen and (min-width: 768px)'
-$medium: 'only screen and (min-width: 992px)'
+$small: 'only screen and (min-width: 480px)'
+$medium: 'only screen and (min-width: 768px)'
+$desctop: 'only screen and (min-width: 1024px)'
 $large: 'only screen and (min-width: 1200px)'
 
 $base: #7d7e83
+
 body
 	min-width: 320px
+	max-width: 1200px
+	margin: 0 auto
+	background: bisque
 	@media #{$small}
 		background: blue
 	@media #{$medium}
 		background: yellow
+	@media #{$desctop}
+		background: burlywood
 	@media #{$large}
 		background: green
 .nav-head
-	background: $base
 	position: relative
-	@media #{$medium}
-		width: 768px
-		margin: 0 auto
-	@media #{$large}
-		width: 992px
-		margin: 0 auto
+	background: #231f20
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	@media #{$small}
+		background: $base
 .logo-wrap
-	width: 320px
+	height: 75px
+	width: 300px
+	margin: 0 auto
 	position: relative
+	display: inline-block
+	@media #{$small}
+		margin: 0
 	a
 		display: block
 		font-size: 0
 	img
-		padding: 20px 60px 20px 20px
+		padding: 20px 40px
 		background: #231f20
 		width: 100%
 		box-sizing: border-box
-		@media #{$small}
-			width: inherit
-			padding: 20px 40px
 .toggle-btn
 	width: 40px
 	height: 30px
 	position: absolute
-	right: 10px
+	right: 5px
 	top: 0
 	bottom: 0
 	margin: auto
 	padding: 0
-	display: block
 	display: flex
 	justify-content: center
 	align-content: space-around
 	flex-wrap: wrap
 	align-items: center
+	@media #{$small}
+		right: 10px
+	@media #{$medium}
+		display: none
 	span
 		width: 30px
 		height: 3px
@@ -81,21 +91,22 @@ body
 			right: 0
 .nav-section
 	position: relative
-.nav-list
+.mobile-list
 	margin: 0
 	padding: 0
 	list-style-type: none
-	width: 320px
+	width: 100%
 	height: 0
 	overflow: hidden
 	transition: .2s
 	position: absolute
 	right: 0
 	text-align: right
+	@media #{$medium}
+		display: none
 	&.open
-		height: 258px
+		height: 301px
 	a
-		background: #009bc5
 		padding: 10px 15px
 		width: 100%
 		display: block
@@ -106,4 +117,32 @@ body
 		color: #fff
 		box-sizing: border-box
 		&.active
-			background: darken(#009bc5, 20%)
+			background: darken(#009bc5, 10%)
+	li
+		background: #009bc5
+		&:nth-child(2n)
+			background: darken(#009bc5, 3%)
+.nav-list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	display: none
+	font-size: 0
+	flex: 2 2 auto
+	text-align: center
+	align-self: stretch
+	flex-shrink: 100%
+	@media #{$medium}
+		display: inline-block
+	li
+		display: inline-block
+		height: 100%
+	a
+		display: block
+		height: 100%
+		font-size: 14px
+		color: #fff
+		text-decoration: none
+		vertical-align: middle
+		&.active, &:hover
+			background: darken($base, 10%)

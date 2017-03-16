@@ -1,54 +1,68 @@
 body {
-  min-width: 320px; }
-  @media only screen and (min-width: 768px) {
+  min-width: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: bisque; }
+  @media only screen and (min-width: 480px) {
     body {
       background: blue; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) {
     body {
       background: yellow; } }
+  @media only screen and (min-width: 1024px) {
+    body {
+      background: burlywood; } }
   @media only screen and (min-width: 1200px) {
     body {
       background: green; } }
 
 .nav-head {
-  background: red;
-  position: relative; }
-  @media only screen and (min-width: 992px) {
+  position: relative;
+  background: #231f20;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media only screen and (min-width: 480px) {
     .nav-head {
-      width: 768px;
-      margin: 0 auto; } }
-  @media only screen and (min-width: 1200px) {
-    .nav-head {
-      width: 992px;
-      margin: 0 auto; } }
+      background: #7d7e83; } }
 
 .logo-wrap {
-  width: 320px;
-  position: relative; }
+  height: 75px;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block; }
+  @media only screen and (min-width: 480px) {
+    .logo-wrap {
+      margin: 0; } }
   .logo-wrap a {
     display: block;
     font-size: 0; }
   .logo-wrap img {
-    padding: 20px 60px 20px 20px;
+    padding: 20px 40px;
     background: #231f20;
     width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box; }
-    @media only screen and (min-width: 768px) {
-      .logo-wrap img {
-        width: inherit;
-        padding: 20px 40px; } }
 
 .toggle-btn {
   width: 40px;
   height: 30px;
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 0;
   bottom: 0;
   margin: auto;
   padding: 0;
-  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -67,6 +81,12 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media only screen and (min-width: 480px) {
+    .toggle-btn {
+      right: 10px; } }
+  @media only screen and (min-width: 768px) {
+    .toggle-btn {
+      display: none; } }
   .toggle-btn span {
     width: 30px;
     height: 3px;
@@ -104,11 +124,11 @@ body {
 .nav-section {
   position: relative; }
 
-.nav-list {
+.mobile-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  width: 320px;
+  width: 100%;
   height: 0;
   overflow: hidden;
   -webkit-transition: .2s;
@@ -116,10 +136,12 @@ body {
   position: absolute;
   right: 0;
   text-align: right; }
-  .nav-list.open {
-    height: 258px; }
-  .nav-list a {
-    background: #009bc5;
+  @media only screen and (min-width: 768px) {
+    .mobile-list {
+      display: none; } }
+  .mobile-list.open {
+    height: 301px; }
+  .mobile-list a {
     padding: 10px 15px;
     width: 100%;
     display: block;
@@ -130,5 +152,43 @@ body {
     color: #fff;
     -webkit-box-sizing: border-box;
             box-sizing: border-box; }
-    .nav-list a.active {
-      background: #004b5f; }
+    .mobile-list a.active {
+      background: #007392; }
+  .mobile-list li {
+    background: #009bc5; }
+    .mobile-list li:nth-child(2n) {
+      background: #008fb6; }
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: none;
+  font-size: 0;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 2 auto;
+      -ms-flex: 2 2 auto;
+          flex: 2 2 auto;
+  text-align: center;
+  -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+              -ms-grid-row-align: stretch;
+          align-self: stretch;
+  -webkit-flex-shrink: 100%;
+      -ms-flex-negative: 100%;
+          flex-shrink: 100%; }
+  @media only screen and (min-width: 768px) {
+    .nav-list {
+      display: inline-block; } }
+  .nav-list li {
+    display: inline-block;
+    height: 100%; }
+  .nav-list a {
+    display: block;
+    height: 100%;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    vertical-align: middle; }
+    .nav-list a.active, .nav-list a:hover {
+      background: #646569; }

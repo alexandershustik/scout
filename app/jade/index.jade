@@ -6,6 +6,7 @@ head
 	title Scout project
 	link(rel="stylesheet", href="libs/normalize-css/normalize.css")
 	link(rel='stylesheet', href='css/main.css')
+	script(src='https://use.fontawesome.com/925906e6e0.js')
 	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
 	script(src='js/common.js')
 body
@@ -18,10 +19,32 @@ body
 				span
 				span
 				span
-		ul.nav-list
-			li: a(href="#") место
-			li: a(href="#") материалы
-			li: a(href="#").active спикеры
-			li: a(href="#") участники
-			li: a(href="#") фотоотчет
-			li: a(href="#") контакты
+			ul.nav-list
+				li: a(href="#") место
+				li: a(href="#") материалы
+				li: a(href="#").active спикеры
+				li: a(href="#") участники
+				li: a(href="#") фотоотчет
+				li: a(href="#") контакты
+		ul.mobile-list
+			li: a(href="#")
+				i.fa.fa-sign-in(aria-hidden="true") 
+				|  вход / регистрация
+			li: a(href="#")
+				i.fa.fa-map-marker(aria-hidden="true")
+				|  место 
+			li: a(href="#")
+				i.fa.fa-book(aria-hidden="true")
+				|  материалы 
+			li: a(href="#").active
+				i.fa.fa-user(aria-hidden="true")
+				|  спикеры 
+			li: a(href="#")
+				i.fa.fa-users(aria-hidden="true")
+				|  участники 
+			li: a(href="#")
+				i.fa.fa-camera(aria-hidden="true")
+				|  фотоотчет 
+			li: a(href="#")
+				i.fa.fa-phone(aria-hidden="true")
+				|  контакты 
